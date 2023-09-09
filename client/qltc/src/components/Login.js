@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import cookie from "react-cookies";
-import { Navigate, useNavigate, useSearchParams } from "react-router-dom";
+import { Navigate, useSearchParams } from "react-router-dom";
 import { MyUserContext } from "../App";
 import Apis, { authApi, endpoints } from "../configs/Apis";
 

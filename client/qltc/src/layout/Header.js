@@ -31,23 +31,26 @@ const Header = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">WEDDING</Navbar.Brand>
+        <Navbar.Brand href="/">WEDDING CALLARY</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Link className="nav-link" to="/">
               Trang chủ
             </Link>
-            <Link className="nav-link" to="/">
+            <Link className="nav-link" to="/menu">
+              Thực đơn
+            </Link>
+            <Link className="nav-link" to="/service">
               Dịch vụ
             </Link>
-            <Link className="nav-link" to="/">
+            <Link className="nav-link" to="/image">
               Hình ảnh
             </Link>
-            <Link className="nav-link" to="/">
+            <Link className="nav-link" to="/news">
               Tin tức
             </Link>
-            <Link className="nav-link" to="/">
+            <Link className="nav-link" to="/contact">
               Liên hệ
             </Link>
             {user === null ? (
