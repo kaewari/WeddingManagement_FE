@@ -4,6 +4,7 @@ import cookie from "react-cookies";
 import { Button, Col, Form, Image, Row } from "react-bootstrap";
 import { MyUserContext } from "../App";
 import { Navigate, useNavigate } from "react-router-dom";
+import { event } from "jquery";
 const UserDetails = () => {
   const [user, dispatch] = useContext(MyUserContext);
   const [oldPassword, setOldPassword] = useState();
@@ -14,8 +15,6 @@ const UserDetails = () => {
   const [address, setAddress] = useState();
   const [phone, setPhone] = useState();
   const [avatar, setAvatar] = useState(null);
-
-  const formData = new FormData();
 
   const navigate = useNavigate();
 
@@ -36,23 +35,30 @@ const UserDetails = () => {
     getUser();
   }, [user]);
   console.log(avatar);
+  const uploadAvatar = async (e) => {
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const res = await authApi().post(endpoints["update-user"](user.id), {
+      file: data,
+    });
+    console.log(res.data);
+  };
   const updateUser = (evt) => {
     evt.preventDefault();
     console.log(avatar);
     const process = async () => {
       try {
-        formData.append("avatar", avatar.fileAttachment);
-        await authApi().post(endpoints["updateUser"](user.id), {
-          name: name,
-          oldPassword: oldPassword,
-          email: email,
-          phone: phone,
-          address: address,
-          newPassword: newPassword,
-          confirmPassword: confirmPassword,
-          avatar: formData,
-        });
-      
+        // const res = await authApi().post(endpoints["update-user"](user.id), {
+        // name: name,
+        // oldPassword: oldPassword,
+        // email: email,
+        // phone: phone,
+        // address: address,
+        // newPassword: newPassword,
+        // confirmPassword: confirmPassword,
+        //   avatar: data,
+        // });
+
         dispatch({
           type: "logout",
         });
@@ -69,22 +75,40 @@ const UserDetails = () => {
       <Row>
         <Col md={4} xs={6}>
           <Row>
-            <Col className="text-center">
+            {/* <Col className="text-center">
               <Image width={300} height={250} src={avatar} rounded="true" />
-            </Col>
+            </Col> */}
             <Col>
+              {/* <form
+                id="form-update-avatar"
+                onSubmit={(e) => {
+                  uploadAvatar(e);
+                }}
+              >
+                <label for="file" class="form-label">
+                  User avatar
+                </label>
+                <input
+                  type="file"
+                  id="file"
+                  name="file"
+                  class="form-control"
+                  required
+                />
+                <button type="submit" className="btn btn-primary">
+                  Create
+                </button>
+              </form> */}
               <Form
-                onSubmit={updateUser}
-                method="POST"
+                onSubmit={(e) => {
+                  uploadAvatar(e);
+                }}
+                method="post"
                 encType="multipart/form-data"
               >
                 <Form.Group>
-                  <Form.Control
-                    type="file"
-                    onChange={(e) => {
-                      setAvatar(e.target.files[0]);
-                    }}
-                  />
+                  <Form.Label>Ảnh đại diện</Form.Label>
+                  <Form.Control type="file" id="file" name="file" required />
                 </Form.Group>
                 <Form.Group>
                   <Button type="submit" style={{ width: "200px" }}>
