@@ -17,7 +17,6 @@ const Menu = () => {
   if (dishes === null) return <MySpinner />;
   return (
     <>
-      <Header />
       <hr />
       <p>
         <span className="h4">WEDDING CALLARY</span> Nhà hàng tiệc cưới mang đến
@@ -58,7 +57,6 @@ const Menu = () => {
           );
         })}
       </Row>
-      <Footer />
     </>
   );
 };

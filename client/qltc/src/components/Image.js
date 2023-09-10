@@ -4,7 +4,6 @@ import Header from "../layout/Header";
 const Image = () => {
   return (
     <div className="text-center">
-      <Header />
       <hr />
       <img
         className="mb-2"
@@ -36,7 +35,6 @@ const Image = () => {
         alt="tiec-cuoi-5"
         style={{ width: "80%", height: "100%" }}
       />
-      <Footer />
     </div>
   );
 };
