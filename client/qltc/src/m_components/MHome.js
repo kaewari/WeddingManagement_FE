@@ -5,17 +5,40 @@ import MNav from "./m_layouts/MNav";
 import {GrUserSettings} from "react-icons/gr"
 import { useContext, useEffect } from "react";
 import { MyUserContext } from "../App";
+import Dashboard from "./path/Dashboard";
+import Branch from "./path/branch/Branch";
+import Dish from "./path/dish/Dish";
+import Employee from "./path/employee/Employee";
+import Order from "./path/order/Order";
+import User from "./path/user/User";
+import Wedding from "./path/wedding/Wedding";
+import WeddingService from "./path/weddingService/WeddingService";
 
 const userRoutes = [
     {
         path: "/",
-        element: <div>Trang chu admin</div>
+        element: <Dashboard />
     },{
         path: "/branch",
-        element: <div>1</div>
+        element: <Branch />
     },{
-        path: "/branch/create",
-        element: <div>12 create</div>
+        path: "/dish",
+        element: <Dish />
+    },{
+        path: "/employee",
+        element: <Employee />
+    },{
+        path: "/order",
+        element: <Order />
+    },{
+        path: "/wedding",
+        element: <Wedding />
+    },{
+        path: "/wedding-service",
+        element: <WeddingService />
+    },{
+        path: "/user",
+        element: <User />
     }
 ]
 
@@ -34,7 +57,7 @@ const MHome = () => {
         <MHeader />
         <div className="d-flex p-2">
             <MNav links={links} style={{height: "100%"}}/>
-            <div className="col-10 border rounded" >
+            <div className="col-10 " >
                 <Routes>
                 {userRoutes.map((route, index) => 
                     <Route key={index} path={route.path} element={route.element} />)}
@@ -67,7 +90,7 @@ const links = [
     },
     {
         name: "Dish",
-        link: "/admin/order",
+        link: "/admin/dish",
         permission: "ORDER"
     },
     {
