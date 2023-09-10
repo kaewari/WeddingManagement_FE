@@ -4,6 +4,8 @@ import cookie from "react-cookies";
 import { Navigate, useSearchParams } from "react-router-dom";
 import { MyUserContext } from "../App";
 import Apis, { authApi, endpoints } from "../configs/Apis";
+import Header from "../layout/Header";
+import Footer from "../layout/Footer";
 
 const Login = () => {
     const [user, dispatch] = useContext(MyUserContext);
@@ -20,7 +22,7 @@ const Login = () => {
                     "name": name,
                     "password": password
                 });
-                cookie.save("token", res.data);
+                cookie.save("token", res.data);                
                 
                 let {data} = await authApi().get(endpoints['current-user']);
                 cookie.save("user", data);
@@ -43,6 +45,7 @@ const Login = () => {
     }
 
     return <>
+        <Header />
         <h1 className="text-center text-info">ĐĂNG NHẬP NGƯỜI DÙNG</h1>
 
         <Form onSubmit={login}>
@@ -58,6 +61,7 @@ const Login = () => {
                 <Button variant="info" type="submit">Đăng nhập</Button>
             </Form.Group>
         </Form>
+        <Footer />
     </>
 }
 
