@@ -38,26 +38,30 @@ const UserDetails = () => {
   const uploadAvatar = async (e) => {
     const form = e.currentTarget;
     const data = new FormData(form);
-    const res = await authApi().post(endpoints["update-user"](user.id), {
-      file: data,
+    const SERVER = "http://localhost:8080";
+    const action = SERVER + endpoints["update-user"](user.id);
+    await fetch(action, {
+      method: "POST",
+      body: data,
+      headers: {
+        Authorization: cookie.load("token").access_token,
+      },
     });
-    console.log(res.data);
   };
   const updateUser = (evt) => {
     evt.preventDefault();
     console.log(avatar);
     const process = async () => {
       try {
-        // const res = await authApi().post(endpoints["update-user"](user.id), {
-        // name: name,
-        // oldPassword: oldPassword,
-        // email: email,
-        // phone: phone,
-        // address: address,
-        // newPassword: newPassword,
-        // confirmPassword: confirmPassword,
-        //   avatar: data,
-        // });
+        await authApi().post(endpoints["update-user"](user.id), {
+        name: name,
+        oldPassword: oldPassword,
+        email: email,
+        phone: phone,
+        address: address,
+        newPassword: newPassword,
+        confirmPassword: confirmPassword,
+        });
 
         dispatch({
           type: "logout",
@@ -79,7 +83,7 @@ const UserDetails = () => {
               <Image width={300} height={250} src={avatar} rounded="true" />
             </Col> */}
             <Col>
-              {/* <form
+              <form
                 id="form-update-avatar"
                 onSubmit={(e) => {
                   uploadAvatar(e);
@@ -98,24 +102,7 @@ const UserDetails = () => {
                 <button type="submit" className="btn btn-primary">
                   Create
                 </button>
-              </form> */}
-              <Form
-                onSubmit={(e) => {
-                  uploadAvatar(e);
-                }}
-                method="post"
-                encType="multipart/form-data"
-              >
-                <Form.Group>
-                  <Form.Label>Ảnh đại diện</Form.Label>
-                  <Form.Control type="file" id="file" name="file" required />
-                </Form.Group>
-                <Form.Group>
-                  <Button type="submit" style={{ width: "200px" }}>
-                    Đổi ảnh đại diện
-                  </Button>
-                </Form.Group>
-              </Form>
+              </form>
             </Col>
           </Row>
         </Col>
