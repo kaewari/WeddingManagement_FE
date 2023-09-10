@@ -11,6 +11,7 @@ import cookie from "react-cookies";
 import Login from "./components/Login";
 import UserDetails from "./components/UserDetails";
 import Image from "./components/Image";
+import MHome from "./m_components/Home";
 export const MyUserContext = createContext();
 
 const App = () => {
@@ -21,22 +22,30 @@ const App = () => {
   return (
     <MyUserContext.Provider value={[user, dispatch]}>
       <BrowserRouter>
-        <Header />
 
         <Container>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/details" element={<UserDetails />} />
-            <Route path="/menu" element={<Menu />} />
-            <Route path="/image" element={<Image />} />
+            <Route exact path="/">
+              <Route index element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/details" element={<UserDetails />} />
+              <Route path="/menu" element={<Menu />} />
+              <Route path="/image" element={<Image />} />
+            </Route>
+            <Route exact path="/user">
+              <Route index element={<MHome />} />
+            </Route>
           </Routes>
         </Container>
 
-        <Footer />
       </BrowserRouter>
     </MyUserContext.Provider>
   );
 };
 
 export default App;
+{/* <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/details" element={<UserDetails />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/image" element={<Image />} /> */}

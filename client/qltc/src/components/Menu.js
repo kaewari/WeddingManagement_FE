@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Apis, { endpoints } from "../configs/Apis";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import MySpinner from "../layout/MySpinner";
+import Header from "../layout/Header";
+import Footer from "../layout/Footer";
 
 const Menu = () => {
   const [dishes, setDishes] = useState(null);
@@ -15,6 +17,7 @@ const Menu = () => {
   if (dishes === null) return <MySpinner />;
   return (
     <>
+      <Header />
       <hr />
       <p>
         <span className="h4">WEDDING CALLARY</span> Nhà hàng tiệc cưới mang đến
@@ -55,6 +58,7 @@ const Menu = () => {
           );
         })}
       </Row>
+      <Footer />
     </>
   );
 };

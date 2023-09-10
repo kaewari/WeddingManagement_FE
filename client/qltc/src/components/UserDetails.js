@@ -11,6 +11,8 @@ import {
   Row,
 } from "react-bootstrap";
 import { MyUserContext } from "../App";
+import Header from "../layout/Header";
+import Footer from "../layout/Footer";
 
 const UserDetails = () => {
   const [user] = useContext(MyUserContext);
@@ -18,6 +20,7 @@ const UserDetails = () => {
   if (user === null) return;
   return (
     <>
+      <Header />
       <Row>
         <Col md={4} xs={6}>
           <Row>
@@ -54,6 +57,7 @@ const UserDetails = () => {
           </Form>
         </Col>
       </Row>
+      <Footer />
     </>
   );
 };
