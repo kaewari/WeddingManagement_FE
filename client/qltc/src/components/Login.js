@@ -25,6 +25,8 @@ const Login = () => {
                 cookie.save("token", res.data);                
                 
                 let {data} = await authApi().get(endpoints['current-user']);
+                data['role'] = res.data.role;
+                data['permissions'] = res.data.permissions
                 cookie.save("user", data);
 
                 dispatch({

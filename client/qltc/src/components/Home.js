@@ -6,10 +6,12 @@ import Index from "./Index";
 import UserDetails from "./UserDetails";
 import Menu from "./Menu";
 import Image from "./Image";
+import { Container } from "react-bootstrap";
 
 const Home = () => {
     return <>
-    <Header />
+        <Container>
+        <Header />
         <Routes>
             <Route index element={<Index />} />
             <Route path="/login" element={<Login />} />
@@ -17,7 +19,8 @@ const Home = () => {
             <Route path="/menu" element={<Menu />} />
             <Route path="/image" element={<Image />} />
         </Routes>
-    <Footer />
+        <Footer />
+        </Container>
     </>
 }
 
