@@ -11,15 +11,18 @@ export const endpoints = {
   login: `${SERVER_CONTEXT}/api/login/`,
   "current-user": `${SERVER_CONTEXT}/api/current-user/`,
   register: `${SERVER_CONTEXT}/api/users/add/`,
-  updateUser: (userId) => `${SERVER_CONTEXT}/api/users/update/${userId}/`,
+  "update-user": (userId) => `${SERVER_CONTEXT}/api/users/update/${userId}/`,
   pay: `${SERVER_CONTEXT}/api/pay/`,
   "service-details": (serviceId) =>
     `${SERVER_CONTEXT}/api/services/${serviceId}/`,
   comments: `${SERVER_CONTEXT}/api/comments/`,
-  // "add-comment": `${SERVER_CONTEXT}/api/comments/`,
+  revenue: `${SERVER_CONTEXT}/api/stats/`,
+  "top-best-selling-dishes": (top) => `${SERVER_CONTEXT}/api/dishes/top/${top}`,
+  "top-best-selling-halls": (top) => `${SERVER_CONTEXT}/api/halls/top/${top}`,
+  "top-best-selling-services": (top) => `${SERVER_CONTEXT}/api/services/top/${top}`,
   branch: {
-    Index: (search) => `${SERVER_CONTEXT}/api/branch`
-  }
+    Index: (search) => `${SERVER_CONTEXT}/api/branch`,
+  },
 };
 
 export const authApi = () => {
