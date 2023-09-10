@@ -5,6 +5,8 @@ import { Button, Col, Form, Image, Row } from "react-bootstrap";
 import { MyUserContext } from "../App";
 import { Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Header from "../layout/Header";
+import Footer from "../layout/Footer";
 
 const UserDetails = () => {
   const [user, dispatch] = useContext(MyUserContext);

@@ -4,6 +4,8 @@ import cookie from "react-cookies";
 import { Navigate, useSearchParams } from "react-router-dom";
 import { MyUserContext } from "../App";
 import Apis, { authApi, endpoints } from "../configs/Apis";
+import Header from "../layout/Header";
+import Footer from "../layout/Footer";
 
 const Login = () => {
     const [user, dispatch] = useContext(MyUserContext);
@@ -20,9 +22,11 @@ const Login = () => {
                     "name": name,
                     "password": password
                 });
-                cookie.save("token", res.data);
+                cookie.save("token", res.data);                
                 
                 let {data} = await authApi().get(endpoints['current-user']);
+                data['role'] = res.data.role;
+                data['permissions'] = res.data.permissions
                 cookie.save("user", data);
 
                 dispatch({

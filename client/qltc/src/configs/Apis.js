@@ -17,6 +17,9 @@ export const endpoints = {
     `${SERVER_CONTEXT}/api/services/${serviceId}/`,
   comments: `${SERVER_CONTEXT}/api/comments/`,
   // "add-comment": `${SERVER_CONTEXT}/api/comments/`,
+  branch: {
+    Index: (search) => `${SERVER_CONTEXT}/api/branch`
+  }
 };
 
 export const authApi = () => {

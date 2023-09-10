@@ -1,3 +1,6 @@
+import Footer from "../layout/Footer";
+import Header from "../layout/Header";
+
 const Image = () => {
   return (
     <div className="text-center">
