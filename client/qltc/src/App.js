@@ -11,6 +11,7 @@ import cookie from "react-cookies";
 import Login from "./components/Login";
 import UserDetails from "./components/UserDetails";
 import Image from "./components/Image";
+import Service from "./components/Service";
 export const MyUserContext = createContext();
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="/details" element={<UserDetails />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/image" element={<Image />} />
+            <Route path="/service" element={<Service />} />
           </Routes>
         </Container>
 

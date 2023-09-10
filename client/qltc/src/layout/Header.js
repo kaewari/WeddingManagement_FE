@@ -1,30 +1,22 @@
-import { useContext, useState } from "react";
-import {
-  Button,
-  Col,
-  Container,
-  Form,
-  Nav,
-  Navbar,
-  Row,
-} from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { MyUserContext } from "../App";
 
 const Header = () => {
   const [user, dispatch] = useContext(MyUserContext);
-  const [kw, setKw] = useState("");
-  const nav = useNavigate();
+  // const [kw, setKw] = useState("");
+  // const nav = useNavigate();
 
-  const search = (evt) => {
-    evt.preventDefault();
+  // const search = (evt) => {
+  //   evt.preventDefault();
 
-    nav(`/?kw=${kw}`);
-  };
+  //   nav(`/?kw=${kw}`);
+  // };
 
   const logout = () => {
     dispatch({
-      "type": "logout",
+      type: "logout",
     });
   };
 
@@ -47,9 +39,6 @@ const Header = () => {
             <Link className="nav-link" to="/image">
               Hình ảnh
             </Link>
-            <Link className="nav-link" to="/news">
-              Tin tức
-            </Link>
             <Link className="nav-link" to="/contact">
               Liên hệ
             </Link>
@@ -69,7 +58,7 @@ const Header = () => {
             )}
           </Nav>
         </Navbar.Collapse>
-        <Form onSubmit={search}>
+        {/* <Form onSubmit={search}>
           <Row>
             <Col xs="auto">
               <Form.Control
@@ -84,7 +73,7 @@ const Header = () => {
               <Button type="submit">Tìm</Button>
             </Col>
           </Row>
-        </Form>
+        </Form> */}
       </Container>
     </Navbar>
   );
