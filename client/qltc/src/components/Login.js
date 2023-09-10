@@ -45,7 +45,6 @@ const Login = () => {
     }
 
     return <>
-        <Header />
         <h1 className="text-center text-info">ĐĂNG NHẬP NGƯỜI DÙNG</h1>
 
         <Form onSubmit={login}>
@@ -61,7 +60,6 @@ const Login = () => {
                 <Button variant="info" type="submit">Đăng nhập</Button>
             </Form.Group>
         </Form>
-        <Footer />
     </>
 }
 
