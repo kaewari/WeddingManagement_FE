@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+.covered-div-a-tag a {
+  display: block;
+    position: relative;
+    text-decoration: none;
+    width: 100%; height: 100%; 
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;  
+    top: 0; left: 0;
+}
+
+.covered-div-a-tag:hover {
+  background-color: #0D6EFD;
+}
+.covered-div-a-tag:hover > a {
+  color: white;
+}

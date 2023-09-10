@@ -22,12 +22,10 @@ const App = () => {
   return (
     <MyUserContext.Provider value={[user, dispatch]}>
       <BrowserRouter>
-        <Container>
           <Routes>
             <Route exact path="*" element={<Home />} />
             <Route exact path="admin/*" element={<MHome />} />
           </Routes>
-        </Container>
 
       </BrowserRouter>
     </MyUserContext.Provider>
