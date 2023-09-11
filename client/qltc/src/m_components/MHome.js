@@ -12,46 +12,51 @@ import Order from "./path/order/Order";
 import User from "./path/user/User";
 import Wedding from "./path/wedding/Wedding";
 import WeddingService from "./path/weddingService/WeddingService";
-import CreateDish from "./path/dish/CreateDish";
-import ViewDish from "./path/dish/ViewDish";
-import EditDish from "./path/dish/EditDish";
+import EmployeeDetails from "./path/employee/EmployeeDetails";
+import EmployeeEdit from "./path/employee/EmployeeEdit";
 
 const userRoutes = [
-    {
-        path: "/",
-        element: <Dashboard />
-    },{
-        path: "/branch",
-        element: <Branch />
-    },{
-        path: "/dish",
-        element: <Dish />
-    },{
-        path: "/dish/create",
-        element: <CreateDish />
-    },{
-        path: "/dish/view",
-        element: <ViewDish />
-    },{
-        path: "/dish/edit",
-        element: <EditDish />
-    },{
-        path: "/employee",
-        element: <Employee />
-    },{
-        path: "/order",
-        element: <Order />
-    },{
-        path: "/wedding",
-        element: <Wedding />
-    },{
-        path: "/wedding-service",
-        element: <WeddingService />
-    },{
-        path: "/user",
-        element: <User />
-    }
-]
+  {
+    path: "/",
+    element: <Dashboard />,
+  },
+  {
+    path: "/branch",
+    element: <Branch />,
+  },
+  {
+    path: "/dish",
+    element: <Dish />,
+  },
+  {
+    path: "/employee",
+    element: <Employee />,
+  },
+  {
+    path: "/employee/view",
+    element: <EmployeeDetails />,
+  },
+  {
+    path: "/employee/edit",
+    element: <EmployeeEdit />,
+  },
+  {
+    path: "/order",
+    element: <Order />,
+  },
+  {
+    path: "/wedding",
+    element: <Wedding />,
+  },
+  {
+    path: "/wedding-service",
+    element: <WeddingService />,
+  },
+  {
+    path: "/user",
+    element: <User />,
+  },
+];
 
 const MHome = () => {
   const [user] = useContext(MyUserContext);

@@ -21,7 +21,7 @@ const MHeader = () => {
             <div className="d-flex align-items-center">
                 <div className="ps-2 pe-2">
                     <Link to="/details" className="text-decoration-none w-100 d-inline-block" >
-                        <img className="rounded-circle h-100" style={{width: "50px"}}
+                        <img className="rounded-circle" height={50} width={50}
                         src={ user != null && user.avatar != null ? user.avatar :
                             "https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg"}
                             alt="profile"/>
