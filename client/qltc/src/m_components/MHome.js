@@ -24,67 +24,92 @@ import EditWeddingService from "./path/weddingService/EditWeddingService";
 import CustomerFeedback from "./path/feedback/CustomerFeedback";
 import ViewCustomerFeedback from "./path/feedback/ViewCustomerFeedback";
 
-
 const userRoutes = [
-    {
-        path: "/",
-        element: <Dashboard />
-    },{
-        path: "/branch",
-        element: <Branch />
-    },{
-        path: "/branch/view",
-        element: <ViewBranch />
-    },{
-        path: "/branch/create",
-        element: <CreateBranch />
-    },{
-        path: "/branch/edit",
-        element: <EditBranch />
-    },{
-        path: "/dish",
-        element: <Dish />
-    },{
-        path: "/dish/create",
-        element: <CreateDish />
-    },{
-        path: "/dish/view",
-        element: <ViewDish />
-    },{
-        path: "/dish/edit",
-        element: <EditDish />
-    },{
-        path: "/employee",
-        element: <Employee />
-    },{
-        path: "/order",
-        element: <Order />
-    },{
-        path: "/wedding",
-        element: <Wedding />
-    },{
-        path: "/wedding-service",
-        element: <WeddingService />
-    },{
-        path: "/wedding-service/create",
-        element: <CreateWeddingService />
-    },{
-        path: "/wedding-service/view",
-        element: <ViewWeddingService />
-    },{
-        path: "/wedding-service/edit",
-        element: <EditWeddingService />
-    },{
-        path: "/user",
-        element: <User />
-    },{
-        path: "/feedback",
-        element: <CustomerFeedback />
-    },{
-        path: "/feedback/view",
-        element: <ViewCustomerFeedback />
-    }
-]
+  {
+    path: "/",
+    element: <Dashboard />,
+  },
+  {
+    path: "/branch",
+    element: <Branch />,
+  },
+  {
+    path: "/branch/view",
+    element: <ViewBranch />,
+  },
+  {
+    path: "/branch/create",
+    element: <CreateBranch />,
+  },
+  {
+    path: "/branch/edit",
+    element: <EditBranch />,
+  },
+  {
+    path: "/dish",
+    element: <Dish />,
+  },
+  {
+    path: "/dish/create",
+    element: <CreateDish />,
+  },
+  {
+    path: "/dish/view",
+    element: <ViewDish />,
+  },
+  {
+    path: "/dish/edit",
+    element: <EditDish />,
+  },
+  {
+    path: "/employee",
+    element: <Employee />,
+  },
+  {
+    path: "/employee/view",
+    element: <EmployeeDetails />,
+  },
+  {
+    path: "/employee/edit",
+    element: <EmployeeEdit />,
+  },
+  {
+    path: "/order",
+    element: <Order />,
+  },
+  {
+    path: "/wedding",
+    element: <Wedding />,
+  },
+  {
+    path: "/wedding-service",
+    element: <WeddingService />,
+  },
+  {
+    path: "/wedding-service/create",
+    element: <CreateWeddingService />,
+  },
+  {
+    path: "/wedding-service/view",
+    element: <ViewWeddingService />,
+  },
+  {
+    path: "/wedding-service/edit",
+    element: <EditWeddingService />,
+  },
+  {
+    path: "/user",
+    element: <User />,
+  },
+  {
+    path: "/feedback",
+    element: <CustomerFeedback />,
+  },
+  {
+    path: "/feedback/view",
+    element: <ViewCustomerFeedback />,
+  },
+];
 
 const MHome = () => {
   const [user] = useContext(MyUserContext);
@@ -123,49 +148,49 @@ export default MHome;
 const acceptsRole = ["Admin", "Manager", "Waiter"];
 
 const links = [
-    {
-        name: "Dashboard",
-        link: "/admin",
-        permission: null
-    },
-    {
-        name: "Branch",
-        link: "/admin/branch",
-        permission: "BRANCH"
-    },
-    {
-        name: "Dish",
-        link: "/admin/dish",
-        permission: "ORDER"
-    },
-    {
-        name: "Order",
-        link: "/admin/order",
-        permission: "ORDER"
-    },
-    {
-        name: "Wedding Order",
-        link: "/admin/wedding",
-        permission: "WEDDING"
-    },
-    {
-        name: "Wedding Service",
-        link: "/admin/wedding-service",
-        permission: "WEDDING"
-    },
-    {
-        name: "Employee",
-        link: "/admin/employee",
-        permission: "ORDER"
-    },
-    {
-        name: "User",
-        link: "/admin/user",
-        permission: "ORDER"
-    },
-    {
-        name: "Feedback",
-        link: "/admin/feedback",
-        permission: "FEEDBACK"
-    }
-]
+  {
+    name: "Dashboard",
+    link: "/admin",
+    permission: null,
+  },
+  {
+    name: "Branch",
+    link: "/admin/branch",
+    permission: "BRANCH",
+  },
+  {
+    name: "Dish",
+    link: "/admin/dish",
+    permission: "ORDER",
+  },
+  {
+    name: "Order",
+    link: "/admin/order",
+    permission: "ORDER",
+  },
+  {
+    name: "Wedding Order",
+    link: "/admin/wedding",
+    permission: "WEDDING",
+  },
+  {
+    name: "Wedding Service",
+    link: "/admin/wedding-service",
+    permission: "WEDDING",
+  },
+  {
+    name: "Employee",
+    link: "/admin/employee",
+    permission: "ORDER",
+  },
+  {
+    name: "User",
+    link: "/admin/user",
+    permission: "ORDER",
+  },
+  {
+    name: "Feedback",
+    link: "/admin/feedback",
+    permission: "FEEDBACK",
+  },
+];
