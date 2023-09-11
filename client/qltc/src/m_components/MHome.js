@@ -13,6 +13,9 @@ import Order from "./path/order/Order";
 import User from "./path/user/User";
 import Wedding from "./path/wedding/Wedding";
 import WeddingService from "./path/weddingService/WeddingService";
+import CreateDish from "./path/dish/CreateDish";
+import ViewDish from "./path/dish/ViewDish";
+import EditDish from "./path/dish/EditDish";
 
 const userRoutes = [
     {
@@ -24,6 +27,15 @@ const userRoutes = [
     },{
         path: "/dish",
         element: <Dish />
+    },{
+        path: "/dish/create",
+        element: <CreateDish />
+    },{
+        path: "/dish/view",
+        element: <ViewDish />
+    },{
+        path: "/dish/edit",
+        element: <EditDish />
     },{
         path: "/employee",
         element: <Employee />
