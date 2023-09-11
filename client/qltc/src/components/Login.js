@@ -4,8 +4,6 @@ import cookie from "react-cookies";
 import { Navigate, useSearchParams } from "react-router-dom";
 import { MyUserContext } from "../App";
 import Apis, { authApi, endpoints } from "../configs/Apis";
-import Header from "../layout/Header";
-import Footer from "../layout/Footer";
 
 const Login = () => {
     const [user, dispatch] = useContext(MyUserContext);

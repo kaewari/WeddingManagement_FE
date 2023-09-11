@@ -1,10 +1,9 @@
+import { useContext, useEffect } from "react";
+import { GrUserSettings } from "react-icons/gr";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
-import Login from "../components/Login";
+import { MyUserContext } from "../App";
 import MHeader from "./m_layouts/MHeader";
 import MNav from "./m_layouts/MNav";
-import {GrUserSettings} from "react-icons/gr"
-import { useContext, useEffect } from "react";
-import { MyUserContext } from "../App";
 import Dashboard from "./path/Dashboard";
 import Branch from "./path/branch/Branch";
 import Dish from "./path/dish/Dish";
@@ -88,39 +87,40 @@ const userRoutes = [
 ]
 
 const MHome = () => {
+  const [user] = useContext(MyUserContext);
+  const navigate = useNavigate();
 
-    const [user] = useContext(MyUserContext);
-    const navigate = useNavigate();
+  useEffect(() => {
+    if (!(user != null && acceptsRole.find((r) => r === user.role))) {
+      navigate("/login");
+    }
+  });
 
-    useEffect(() => {
-        if (!(user != null && acceptsRole.find(r => r === user.role))) {
-            navigate("/login")
-        }
-    })
-
-    return <>
-        <MHeader />
-        <div className="d-flex p-2">
-            <MNav links={links} style={{height: "100%"}}/>
-            <div className="col-10 " >
-                <Routes>
-                {userRoutes.map((route, index) => 
-                    <Route key={index} path={route.path} element={route.element} />)}
-                </Routes>
-            </div>
-            <div className="position-absolute ms-2 mb-2 start-0 bottom-0 text-primary">
-                <Link to="/details" className="text-decoration-none">
-                <GrUserSettings size={25}/> Tài khoản
-                </Link>    
-            </div>
+  return (
+    <>
+      <MHeader />
+      <div className="d-flex p-2">
+        <MNav links={links} style={{ height: "100%" }} />
+        <div className="col-10 ">
+          <Routes>
+            {userRoutes.map((route, index) => (
+              <Route key={index} path={route.path} element={route.element} />
+            ))}
+          </Routes>
         </div>
-        
+        <div className="position-absolute ms-2 mb-2 start-0 bottom-0 text-primary">
+          <Link to="/details" className="text-decoration-none">
+            <GrUserSettings size={25} /> Tài khoản
+          </Link>
+        </div>
+      </div>
     </>
-}
+  );
+};
 
 export default MHome;
 
-const acceptsRole = ["Admin", "Manager", "Waiter"]
+const acceptsRole = ["Admin", "Manager", "Waiter"];
 
 const links = [
     {
