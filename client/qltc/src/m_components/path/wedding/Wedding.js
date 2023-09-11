@@ -52,8 +52,8 @@ const Wedding = () => {
           <div> 
             {/* <input type="checkbox" id='allPaid' name="allPaid" onChange={() => {(filter.allPaid == null) ? setFilter({...filter, allPaid: true}) : setFilter({...filter, allPaid: false})}} />
             <label for="allPaid" >All Paid?</label> */}
-            <input type="checkbox" id='completed' name="completed" onChange={() => {(filter.completed == null) ? setFilter({...filter, completed: true}) : setFilter({...filter, completed: false})}} />
-            <label for="completed" > Is Completed?</label>
+            <input type="checkbox" id='completed' name="completed" onChange={() => {(filter.completed == null) ? setFilter({...filter, completed: true}) : setFilter({...filter, completed: !filter.completed})}} />
+            <label for="completed" > {filter.completed == null ? "Is Completed?" : ((filter.completed) ? "Completed" : "Not completed")}</label>
             {/* <input type="checkbox" id='onlyDeposit' name="onlyDeposit" onChange={() => {(filter.onlyDeposit == null) ? setFilter({...filter, onlyDeposit: true}) : setFilter({...filter, onlyDeposit: false})}} />
             <label for="onlyDeposit" >Have Deposit?</label> */}
           </div>
@@ -72,8 +72,8 @@ const Wedding = () => {
           </tr>
         </thead>
         <tbody>
-          {orders != null && orders.slice(0).reverse().map((order) => 
-            <tr className={!order.receiptNo ? "table-active" : ""}>
+          {orders != null && orders.slice(0).reverse().map((order, index) => 
+            <tr className={!order.receiptNo ? "table-active" : ""} key={index}> 
               <th scope="row">{order.id}</th>
               <td>{order.whatCustomer.name}</td>
               <td>Current: {order.deposit + order.totalLeft}</td>

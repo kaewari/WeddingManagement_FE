@@ -30,14 +30,18 @@ const Branch = () => {
       try {
         const request = await authApi().delete(endpoints['branch-delete'](id), {method: "DELETE", headers: {"Authorization": cookie.load("token").access_token}})
         if (request.status == 204) {
-          setState(!state)
-        } else if (request.status == 404) {
+         setState(!state)
+        }
+        setError("")
+      } catch (err) {
+        const request = err.request
+        if (request.status == 404) {
           setError("Not found that branch")
+        } else if (request.status == 500) {
+          setError("Cannot delete because of foreign key.")
         } else {
           setError("Error when trying to delete branch.")
         }
-      } catch (err) {
-        setError("Error when trying to delete branch.")
       }
     }
 
@@ -50,13 +54,15 @@ const Branch = () => {
         const request = await authApi().put(url)
         if (request.status == 200) {
           setState(!state)
-        } else if (request.status == 404) {
+        }
+        setError("")
+      } catch (err) {
+        const request = err.request
+        if (request.status == 404) {
           setError("Not found that branch")
         } else {
           setError("Error when trying to " + action + " branch.")
         }
-      } catch (err) {
-        setError("Error when trying to " + action + " branch.")
       }
     }
 
