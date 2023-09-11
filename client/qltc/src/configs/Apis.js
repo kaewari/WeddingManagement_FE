@@ -69,6 +69,7 @@ export const endpoints = {
   "user-detail": (userId) => `${SERVER_CONTEXT}/api/users/id/${userId}/`,
   "user-update": (userId) => `${SERVER_CONTEXT}/api/users/update/${userId}/`,
   "user-delete": (userId) => `${SERVER_CONTEXT}/api/users/delete/${userId}/`,
+  "user-create": `${SERVER_CONTEXT}/api/user/`,
   employees: `${SERVER_CONTEXT}/api/employees/`,
   "employee-detail": (employeeId) =>
     `${SERVER_CONTEXT}/api/employees/id/${employeeId}/`,
@@ -76,6 +77,7 @@ export const endpoints = {
     `${SERVER_CONTEXT}/api/employees/update/${employeeId}/`,
   "employee-delete": (employeeId) =>
     `${SERVER_CONTEXT}/api/employees/delete/${employeeId}/`,
+  "employee-create": `${SERVER_CONTEXT}/api/employees/add/`,
   "current-user": `${SERVER_CONTEXT}/api/current-user/`,
   register: `${SERVER_CONTEXT}/api/users/add/`,
   pay: `${SERVER_CONTEXT}/api/pay/`,

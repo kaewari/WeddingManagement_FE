@@ -1,8 +1,8 @@
-import { useEffect, useReducer, useState } from "react";
-import { authApi, endpoints } from "../../../configs/Apis";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { Button, Col, Form, Row, Image } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Button, Col, Form, Image, Row } from "react-bootstrap";
 import cookie from "react-cookies";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { authApi, endpoints } from "../../../configs/Apis";
 const UserEdit = () => {
   const [params] = useSearchParams();
   const id = params.get("id");
@@ -79,6 +79,7 @@ const UserEdit = () => {
   return (
     <>
       <h3>Update an user id: {id}</h3>
+      <h3 className="text-danger">{error}</h3>
       <Row>
         {user == null && error}
         <Col md={4} xs={6}>

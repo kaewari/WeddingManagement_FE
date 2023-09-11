@@ -1,8 +1,6 @@
-import { authApi } from "../../../configs/Apis";
-import { endpoints } from "../../../configs/Apis";
-import cookie from "react-cookies";
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import { authApi, endpoints } from "../../../configs/Apis";
 const EmployeeDetails = () => {
   const [employee, setEmployee] = useState();
   const [error, setError] = useState();

@@ -28,6 +28,8 @@ import EmployeeEdit from "./path/employee/EmployeeEdit";
 import ViewDish from "./path/dish/ViewDish";
 import UserDetails from "./path/user/UserDetails";
 import UserEdit from "./path/user/UserEdit";
+import UserCreate from "./path/user/UserCreate";
+import EmployeeCreate from "./path/employee/EmployeeCreate";
 
 const userRoutes = [
   {
@@ -79,6 +81,10 @@ const userRoutes = [
     element: <EmployeeEdit />,
   },
   {
+    path: "/employee/create",
+    element: <EmployeeCreate />,
+  },
+  {
     path: "/order",
     element: <Order />,
   },
@@ -113,6 +119,10 @@ const userRoutes = [
   {
     path: "/user/edit",
     element: <UserEdit />,
+  },
+  {
+    path: "/user/create",
+    element: <UserCreate />,
   },
   {
     path: "/feedback",

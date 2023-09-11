@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import cookie from "react-cookies";
 import { AiFillEdit, AiFillPlusCircle } from "react-icons/ai";
 import { GrFormView } from "react-icons/gr";
-import { MdDeleteForever, MdOutlineFindInPage } from "react-icons/md";
+import { MdDeleteForever } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { authApi, endpoints } from "../../../configs/Apis";
 import MySpinner from "../../../layout/MySpinner";

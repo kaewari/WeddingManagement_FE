@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import cookie from "react-cookies";
+import { Image } from "react-bootstrap";
 import { AiFillEdit, AiFillPlusCircle } from "react-icons/ai";
 import { GrFormView } from "react-icons/gr";
-import { MdDeleteForever, MdOutlineFindInPage } from "react-icons/md";
+import { MdDeleteForever } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { authApi, endpoints } from "../../../configs/Apis";
 import MySpinner from "../../../layout/MySpinner";
-import { Image } from "react-bootstrap";
 const User = () => {
   const [users, setUsers] = useState([]);
   const [count, setCount] = useState(0);

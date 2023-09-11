@@ -1,9 +1,7 @@
-import { authApi } from "../../../configs/Apis";
-import { endpoints } from "../../../configs/Apis";
-import cookie from "react-cookies";
 import { useEffect, useState } from "react";
+import { Col, Image, Row } from "react-bootstrap";
 import { Link, useSearchParams } from "react-router-dom";
-import { Image, Row, Col } from "react-bootstrap";
+import { authApi, endpoints } from "../../../configs/Apis";
 const UserDetails = () => {
   const [user, setUser] = useState();
   const [error, setError] = useState();

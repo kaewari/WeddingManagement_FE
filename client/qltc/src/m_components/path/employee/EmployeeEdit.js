@@ -1,6 +1,6 @@
-import { useEffect, useReducer, useState } from "react";
-import { authApi, endpoints } from "../../../configs/Apis";
+import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { authApi, endpoints } from "../../../configs/Apis";
 
 const EmployeeEdit = () => {
   const [params] = useSearchParams();
