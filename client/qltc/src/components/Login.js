@@ -6,6 +6,7 @@ import { MyUserContext } from "../App";
 import Apis, { authApi, endpoints } from "../configs/Apis";
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
+import { acceptsRole } from "../m_components/MHome";
 
 const Login = () => {
     const [user, dispatch] = useContext(MyUserContext);
@@ -42,6 +43,7 @@ const Login = () => {
     }
 
     if (user !== null) {
+        if (acceptsRole.includes(user.role)) {return <Navigate to="/admin" />}
         let next = q.get("next") || "/";
         return <Navigate to={next} />
     }

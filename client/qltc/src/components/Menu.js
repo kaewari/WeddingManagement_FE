@@ -9,7 +9,7 @@ const Menu = () => {
   const [dishes, setDishes] = useState(null);
   useEffect(() => {
     const process = async () => {
-      let { data } = await Apis.get(endpoints["dishes"]);
+      let { data } = await Apis.get(endpoints["dishes"] + "?pageSize=100");
       setDishes(data);
     };
     process();

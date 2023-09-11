@@ -1,5 +1,11 @@
+import { useContext } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { MyUserContext } from "../App";
 const Footer = () => {
+
+  const [user, dispatch] = useContext(MyUserContext)
+
   return (
     <>
       <Container style={{ backgroundColor: "black" }}>
@@ -23,7 +29,14 @@ const Footer = () => {
             <p>Địa chỉ: 43 Bà Chiểu, Phường Hòa Thạnh, Quận 1, HCM</p>
             <p>Địa chỉ: 32 Lý Chính Thắng, Phường Hòa Thạnh, Quận 3, HCM</p>
           </Col>
+          {}
+          {/* { user && user.role.includes('Customer') &&  */}
+          <div className="d-flex justify-content-end">
+            <Link to="/feedback" >Gửi phản hồi</Link>
+          </div>
+          {/* } */}
         </Row>
+        
       </Container>
     </>
   );

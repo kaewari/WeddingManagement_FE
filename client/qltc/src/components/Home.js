@@ -7,6 +7,7 @@ import UserDetails from "./UserDetails";
 import Menu from "./Menu";
 import Image from "./Image";
 import { Container } from "react-bootstrap";
+import UserCreateFeedback from "./UserCreateFeedback";
 
 const Home = () => {
     return <>
@@ -18,6 +19,7 @@ const Home = () => {
             <Route path="/details" element={<UserDetails />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/image" element={<Image />} />
+            <Route path="/feedback" element={<UserCreateFeedback />} />
         </Routes>
         <Footer />
         </Container>
