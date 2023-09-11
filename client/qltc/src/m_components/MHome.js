@@ -16,6 +16,11 @@ import WeddingService from "./path/weddingService/WeddingService";
 import CreateDish from "./path/dish/CreateDish";
 import ViewDish from "./path/dish/ViewDish";
 import EditDish from "./path/dish/EditDish";
+import CreateBranch from "./path/branch/CreateBranch";
+import ViewBranch from "./path/branch/ViewBranch";
+import ViewWeddingService from "./path/weddingService/ViewWeddingService";
+import CreateWeddingService from "./path/weddingService/CreateWeddingService";
+import EditBranch from "./path/branch/EditBranch";
 
 const userRoutes = [
     {
@@ -24,6 +29,15 @@ const userRoutes = [
     },{
         path: "/branch",
         element: <Branch />
+    },{
+        path: "/branch/view",
+        element: <ViewBranch />
+    },{
+        path: "/branch/create",
+        element: <CreateBranch />
+    },{
+        path: "/branch/edit",
+        element: <EditBranch />
     },{
         path: "/dish",
         element: <Dish />
@@ -48,6 +62,12 @@ const userRoutes = [
     },{
         path: "/wedding-service",
         element: <WeddingService />
+    },{
+        path: "/wedding-service/create",
+        element: <CreateWeddingService />
+    },,{
+        path: "/wedding-service/view",
+        element: <ViewWeddingService />
     },{
         path: "/user",
         element: <User />
