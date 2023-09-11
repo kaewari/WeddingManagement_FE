@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { SERVER, endpoints } from "../../../configs/Apis";
+import { endpoints } from "../../../configs/Apis";
 
 const ViewDish = () => {
   const [params] = useSearchParams();
@@ -11,9 +11,7 @@ const ViewDish = () => {
 
   useEffect(() => {
     try {
-      let response = axios.get(endpoints["dish-details"](id), {
-        baseURL: SERVER,
-      });
+      let response = axios.get(endpoints["dish-details"](id));
       response.then((response) => {
         if (response.status == 200) {
           setDish(response.data);

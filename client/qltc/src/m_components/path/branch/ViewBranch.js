@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { SERVER, endpoints } from "../../../configs/Apis";
+import { endpoints } from "../../../configs/Apis";
 
 const ViewBranch = () => {
 
@@ -13,7 +13,7 @@ const ViewBranch = () => {
     useEffect(() => {
         try {
             const api = async () => {
-                let response = await axios.get(endpoints['branch-details'](id), {baseURL: SERVER})
+                let response = await axios.get(endpoints['branch-details'](id))
                 setBranch(response.data)
             }
             api();

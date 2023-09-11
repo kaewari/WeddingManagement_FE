@@ -1,12 +1,7 @@
-import { useEffect, useState } from "react";
-import Apis, {
-  SERVER,
-  authApi,
-  endpoints,
-  authAxiosAPI,
-} from "../../../configs/Apis";
-import { useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { authApi, endpoints } from "../../../configs/Apis";
 
 const EditDish = () => {
   const [params] = useSearchParams();
@@ -17,9 +12,7 @@ const EditDish = () => {
 
   useEffect(() => {
     try {
-      let response = axios.get(endpoints["dish-details"](id), {
-        baseURL: SERVER,
-      });
+      let response = axios.get(endpoints["dish-details"](id));
       response.then((response) => {
         if (response.status == 200) {
           setDish(response.data);

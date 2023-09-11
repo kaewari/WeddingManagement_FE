@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
-import { SERVER, authApi, endpoints } from "../../../configs/Apis";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import cookie from "react-cookies";
+import { useSearchParams } from "react-router-dom";
+import { authApi, endpoints } from "../../../configs/Apis";
 import AddHall from "./hall/AddHall";
-import cookie from "react-cookies"
 import AddHallPrice from "./hall/AddHallPrice";
 import UpdateHallPrice from "./hall/UpdateHallPrice";
 
@@ -18,7 +18,7 @@ const EditBranch = () => {
     useEffect(() => {
         try {
             const api = async () => {
-                let response = await axios.get(endpoints['branch-details'](branchId), {baseURL: SERVER})
+                let response = await axios.get(endpoints['branch-details'](branchId))
                 setBranch(response.data)
             }
             api();

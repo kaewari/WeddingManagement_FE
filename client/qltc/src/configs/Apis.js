@@ -30,7 +30,6 @@ export const endpoints = {
   "hall-price-create": (hallPriceId) => `${SERVER_CONTEXT}/api/hall/${hallPriceId}/add-hall-price`,
   "orders": `${SERVER_CONTEXT}/api/order`,
   "wedding": `${SERVER_CONTEXT}/api/wedding`,
-  services: `${SERVER_CONTEXT}/api/wedding/service`,
   "service-create": `${SERVER_CONTEXT}/api/wedding/service`,
   "service-details": (serviceId) => `${SERVER_CONTEXT}/api/wedding/service/${serviceId}`,
   "service-update": (serviceId) => `${SERVER_CONTEXT}/api/wedding/service/${serviceId}`,

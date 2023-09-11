@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { SERVER, authApi, endpoints } from "../../../configs/Apis";
+import { authApi, endpoints } from "../../../configs/Apis";
 import AddServicePrice from "./service/AddServicePrice";
 import UpdateServicePrice from "./service/UpdateServicePrice";
 
@@ -17,7 +17,7 @@ const EditWeddingService = () => {
     useEffect(() => {
         try {
             const api = async () => {
-                let response = await axios.get(endpoints['service-details'](serviceId), {baseURL: SERVER})
+                let response = await axios.get(endpoints['service-details'](serviceId))
                 setService(response.data)
             }
             api();

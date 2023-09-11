@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
-import Apis, { SERVER, authApi, endpoints } from "../../../configs/Apis";
-import MySpinner from "../../../layout/MySpinner";
-import {AiFillEdit, AiFillPlusCircle} from "react-icons/ai"
-import {MdDeleteForever, MdOutlineFindInPage} from "react-icons/md"
-import {GrFormView} from "react-icons/gr"
-import {BiSolidDish} from "react-icons/bi"
-import { Link, useNavigate } from "react-router-dom";
-import cookie from "react-cookies"
 import axios from "axios";
+import { useEffect, useState } from "react";
+import cookie from "react-cookies";
+import { AiFillEdit, AiFillPlusCircle } from "react-icons/ai";
+import { BiSolidDish } from "react-icons/bi";
+import { GrFormView } from "react-icons/gr";
+import { MdDeleteForever } from "react-icons/md";
+import { Link, useNavigate } from "react-router-dom";
+import { authApi, endpoints } from "../../../configs/Apis";
+import MySpinner from "../../../layout/MySpinner";
 
 const WeddingService = () => {
     const [services, setServices] = useState([])
@@ -18,7 +18,7 @@ const WeddingService = () => {
 
     useEffect(() => {
         let api = async (pageSize, pageIndex) => {
-        let {data} = await axios.get(endpoints['services'], {baseURL: SERVER})
+        let {data} = await axios.get(endpoints['services'])
         setServices(data)}
         api(100, 1)
     }, [kw, state])
@@ -29,7 +29,7 @@ const WeddingService = () => {
       
       try {
         const request = await authApi().delete(endpoints['service-delete'](id), {method: "DELETE", headers: {"Authorization": cookie.load("token").access_token}})
-        if (request.status == 204) {
+        if (request.status === 204) {
           setState(!state)
         } 
         setError("")

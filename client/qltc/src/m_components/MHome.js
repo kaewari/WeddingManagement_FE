@@ -23,9 +23,9 @@ import EditBranch from "./path/branch/EditBranch";
 import EditWeddingService from "./path/weddingService/EditWeddingService";
 import CustomerFeedback from "./path/feedback/CustomerFeedback";
 import ViewCustomerFeedback from "./path/feedback/ViewCustomerFeedback";
-import ViewDish from "./path/dish/ViewDIsh";
 import EmployeeDetails from "./path/employee/EmployeeDetails";
 import EmployeeEdit from "./path/employee/EmployeeEdit";
+import ViewDish from "./path/dish/ViewDish";
 
 const userRoutes = [
   {
