@@ -61,7 +61,7 @@ const UserDetails = () => {
     console.log(avatar);
     const process = async () => {
       try {
-        await authApi().post(endpoints["update-user"](user.id), {
+        await authApi().post(endpoints["user-update"](user.id), {
           name: name,
           oldPassword: oldPassword,
           email: email,

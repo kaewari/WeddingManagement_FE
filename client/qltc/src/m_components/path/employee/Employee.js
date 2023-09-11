@@ -15,7 +15,7 @@ const Employee = () => {
   
   useEffect(() => {
     const getEmployees = async () => {
-      let { data } = await authApi().get(endpoints["employee"]);
+      let { data } = await authApi().get(endpoints["employees"]);
       setEmployees(data);
       setCount(data.length);
       console.log(data);

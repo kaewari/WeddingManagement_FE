@@ -23,7 +23,9 @@ const Header = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="/" className="fw-bold">GOLDEN CENTER</Navbar.Brand>
+        <Navbar.Brand href="/" className="fw-bold">
+          GOLDEN CENTER
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

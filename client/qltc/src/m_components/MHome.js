@@ -26,6 +26,8 @@ import ViewCustomerFeedback from "./path/feedback/ViewCustomerFeedback";
 import EmployeeDetails from "./path/employee/EmployeeDetails";
 import EmployeeEdit from "./path/employee/EmployeeEdit";
 import ViewDish from "./path/dish/ViewDish";
+import UserDetails from "./path/user/UserDetails";
+import UserEdit from "./path/user/UserEdit";
 
 const userRoutes = [
   {
@@ -103,6 +105,14 @@ const userRoutes = [
   {
     path: "/user",
     element: <User />,
+  },
+  {
+    path: "/user/view",
+    element: <UserDetails />,
+  },
+  {
+    path: "/user/edit",
+    element: <UserEdit />,
   },
   {
     path: "/feedback",

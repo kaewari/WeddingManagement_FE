@@ -11,41 +11,65 @@ export const endpoints = {
   "dish-edit": (dishId) => `${SERVER_CONTEXT}/api/dish/${dishId}/update/`,
   "dish-create": `${SERVER_CONTEXT}/api/dish`,
   "dish-delete": (dishId) => `${SERVER_CONTEXT}/api/dish/${dishId}/`,
-  "dish-deactivate": (dishId) => `${SERVER_CONTEXT}/api/dish/${dishId}/deactivate`,
+  "dish-deactivate": (dishId) =>
+    `${SERVER_CONTEXT}/api/dish/${dishId}/deactivate`,
   "dish-activate": (dishId) => `${SERVER_CONTEXT}/api/dish/${dishId}/activate`,
   branches: `${SERVER_CONTEXT}/api/branch`,
   "branch-details": (branchId) => `${SERVER_CONTEXT}/api/branch/${branchId}`,
-  "branch-deactivate": (branchId) => `${SERVER_CONTEXT}/api/branch/${branchId}/deactivate`,
+  "branch-deactivate": (branchId) =>
+    `${SERVER_CONTEXT}/api/branch/${branchId}/deactivate`,
   "branch-create": `${SERVER_CONTEXT}/api/branch`,
   "branch-edit": (branchId) => `${SERVER_CONTEXT}/api/branch/${branchId}/`,
-  "branch-activate": (branchId) => `${SERVER_CONTEXT}/api/branch/${branchId}/activate`,
+  "branch-activate": (branchId) =>
+    `${SERVER_CONTEXT}/api/branch/${branchId}/activate`,
   "branch-delete": (branchId) => `${SERVER_CONTEXT}/api/branch/${branchId}`,
   "hall-update": (hallId) => `${SERVER_CONTEXT}/api/hall/${hallId}`,
-  "hall-create": (branchId) => `${SERVER_CONTEXT}/api/branch/${branchId}/add-new-halls`,
-  "hall-deactivate": (hallId) => `${SERVER_CONTEXT}/api/hall/${hallId}/deactivate`,
+  "hall-create": (branchId) =>
+    `${SERVER_CONTEXT}/api/branch/${branchId}/add-new-halls`,
+  "hall-deactivate": (hallId) =>
+    `${SERVER_CONTEXT}/api/hall/${hallId}/deactivate`,
   "hall-activate": (hallId) => `${SERVER_CONTEXT}/api/hall/${hallId}/activate`,
   "hall-delete": (hallId) => `${SERVER_CONTEXT}/api/hall/${hallId}`,
-  "hall-price-update": (hallPriceId) => `${SERVER_CONTEXT}/api/hall/update-hall-price/${hallPriceId}`,
-  "hall-price-delete": (hallPriceId) => `${SERVER_CONTEXT}/api/hall/delete-hall-price/${hallPriceId}`,
-  "hall-price-create": (hallPriceId) => `${SERVER_CONTEXT}/api/hall/${hallPriceId}/add-hall-price`,
-  "orders": `${SERVER_CONTEXT}/api/order`,
-  "wedding": `${SERVER_CONTEXT}/api/wedding`,
+  "hall-price-update": (hallPriceId) =>
+    `${SERVER_CONTEXT}/api/hall/update-hall-price/${hallPriceId}`,
+  "hall-price-delete": (hallPriceId) =>
+    `${SERVER_CONTEXT}/api/hall/delete-hall-price/${hallPriceId}`,
+  "hall-price-create": (hallPriceId) =>
+    `${SERVER_CONTEXT}/api/hall/${hallPriceId}/add-hall-price`,
+  orders: `${SERVER_CONTEXT}/api/order`,
+  wedding: `${SERVER_CONTEXT}/api/wedding`,
   "service-create": `${SERVER_CONTEXT}/api/wedding/service`,
-  "service-details": (serviceId) => `${SERVER_CONTEXT}/api/wedding/service/${serviceId}`,
-  "service-update": (serviceId) => `${SERVER_CONTEXT}/api/wedding/service/${serviceId}`,
-  "service-deactivate": (serviceId) => `${SERVER_CONTEXT}/api/wedding/service/${serviceId}/deactivate`,
-  "service-activate": (serviceId) => `${SERVER_CONTEXT}/api/wedding/service/${serviceId}/activate`,
-  "service-delete": (serviceId) => `${SERVER_CONTEXT}/api/wedding/service/${serviceId}`,
-  "service-price-create": (serviceId) => `${SERVER_CONTEXT}/api/wedding/service/${serviceId}/add-service-price`,
-  "service-price-update": (servicePriceId) => `${SERVER_CONTEXT}/api/wedding/service-price/${servicePriceId}`,
-  "service-price-delete": (servicePriceId) => `${SERVER_CONTEXT}/api/wedding/service-price/${servicePriceId}`,
-  "feedback": `${SERVER_CONTEXT}/api/feedback`,
-  "feedback-details": (feedbackId) => `${SERVER_CONTEXT}/api/feedback/${feedbackId}`,
-  "feedback-delete": (feedbackId) => `${SERVER_CONTEXT}/api/feedback/${feedbackId}`,
-  "feedback-reply": (feedbackId) => `${SERVER_CONTEXT}/api/feedback/${feedbackId}/reply`,
-  "feedback-create": (feedbackId) => `${SERVER_CONTEXT}/api/feedback/${feedbackId}`,
+  "service-details": (serviceId) =>
+    `${SERVER_CONTEXT}/api/wedding/service/${serviceId}`,
+  "service-update": (serviceId) =>
+    `${SERVER_CONTEXT}/api/wedding/service/${serviceId}`,
+  "service-deactivate": (serviceId) =>
+    `${SERVER_CONTEXT}/api/wedding/service/${serviceId}/deactivate`,
+  "service-activate": (serviceId) =>
+    `${SERVER_CONTEXT}/api/wedding/service/${serviceId}/activate`,
+  "service-delete": (serviceId) =>
+    `${SERVER_CONTEXT}/api/wedding/service/${serviceId}`,
+  "service-price-create": (serviceId) =>
+    `${SERVER_CONTEXT}/api/wedding/service/${serviceId}/add-service-price`,
+  "service-price-update": (servicePriceId) =>
+    `${SERVER_CONTEXT}/api/wedding/service-price/${servicePriceId}`,
+  "service-price-delete": (servicePriceId) =>
+    `${SERVER_CONTEXT}/api/wedding/service-price/${servicePriceId}`,
+  feedback: `${SERVER_CONTEXT}/api/feedback`,
+  "feedback-details": (feedbackId) =>
+    `${SERVER_CONTEXT}/api/feedback/${feedbackId}`,
+  "feedback-delete": (feedbackId) =>
+    `${SERVER_CONTEXT}/api/feedback/${feedbackId}`,
+  "feedback-reply": (feedbackId) =>
+    `${SERVER_CONTEXT}/api/feedback/${feedbackId}/reply`,
+  "feedback-create": (feedbackId) =>
+    `${SERVER_CONTEXT}/api/feedback/${feedbackId}`,
   login: `${SERVER_CONTEXT}/api/login/`,
-  employee: `${SERVER_CONTEXT}/api/employees/`,
+  users: `${SERVER_CONTEXT}/api/users/`,
+  "user-detail": (userId) => `${SERVER_CONTEXT}/api/users/id/${userId}/`,
+  "user-update": (userId) => `${SERVER_CONTEXT}/api/users/update/${userId}/`,
+  "user-delete": (userId) => `${SERVER_CONTEXT}/api/users/delete/${userId}/`,
+  employees: `${SERVER_CONTEXT}/api/employees/`,
   "employee-detail": (employeeId) =>
     `${SERVER_CONTEXT}/api/employees/id/${employeeId}/`,
   "employee-update": (employeeId) =>
@@ -54,7 +78,6 @@ export const endpoints = {
     `${SERVER_CONTEXT}/api/employees/delete/${employeeId}/`,
   "current-user": `${SERVER_CONTEXT}/api/current-user/`,
   register: `${SERVER_CONTEXT}/api/users/add/`,
-  "update-user": (userId) => `${SERVER_CONTEXT}/api/users/update/${userId}/`,
   pay: `${SERVER_CONTEXT}/api/pay/`,
   comments: `${SERVER_CONTEXT}/api/comments/`,
   "revenue-year": `${SERVER_CONTEXT}/api/stats/year/`,
@@ -75,7 +98,7 @@ export const authApi = () => {
     headers: {
       Authorization: cookie.load("token").access_token,
       "Content-Type": "multipart/form-data",
-      'Access-Control-Allow-Origin': '*',
+      "Access-Control-Allow-Origin": "*",
       // 'Access-Control-Allow-Headers': '*',
       // 'Access-Control-Allow-Methods': 'OPTIONS, POST, DELETE'
     },
