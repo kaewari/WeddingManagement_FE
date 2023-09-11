@@ -13,7 +13,7 @@ import User from "./path/user/User";
 import Wedding from "./path/wedding/Wedding";
 import WeddingService from "./path/weddingService/WeddingService";
 import CreateDish from "./path/dish/CreateDish";
-import ViewDish from "./path/dish/ViewDish";
+
 import EditDish from "./path/dish/EditDish";
 import CreateBranch from "./path/branch/CreateBranch";
 import ViewBranch from "./path/branch/ViewBranch";
@@ -23,6 +23,9 @@ import EditBranch from "./path/branch/EditBranch";
 import EditWeddingService from "./path/weddingService/EditWeddingService";
 import CustomerFeedback from "./path/feedback/CustomerFeedback";
 import ViewCustomerFeedback from "./path/feedback/ViewCustomerFeedback";
+import ViewDish from "./path/dish/ViewDIsh";
+import EmployeeDetails from "./path/employee/EmployeeDetails";
+import EmployeeEdit from "./path/employee/EmployeeEdit";
 
 const userRoutes = [
   {
