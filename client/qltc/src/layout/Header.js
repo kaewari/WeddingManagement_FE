@@ -24,7 +24,7 @@ const Header = () => {
 
   const logout = () => {
     dispatch({
-      "type": "logout",
+      type: "logout",
     });
   };
 
@@ -53,10 +53,16 @@ const Header = () => {
             <Link className="nav-link" to="/contact">
               Liên hệ
             </Link>
+
             {user === null ? (
-              <Link className="nav-link" to="/login">
-                Đăng nhập
-              </Link>
+              <>
+                <Link className="nav-link" to="/register">
+                  Đăng ký
+                </Link>
+                <Link className="nav-link" to="/login">
+                  Đăng nhập
+                </Link>
+              </>
             ) : (
               <>
                 <Link className="nav-link" to="/details">

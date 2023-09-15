@@ -1,7 +1,7 @@
-import Footer from "../layout/Footer";
-import Header from "../layout/Header";
 
-const Image = () => {
+const Image = () =>
+{
+  
   return (
     <div className="text-center">
       <hr />

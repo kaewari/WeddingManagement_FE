@@ -45,7 +45,7 @@ const ViewBranch = () => {
                 <p>Description: <span className="fw-bold">{hall.description}</span></p>
                 <p>Table count: <span className="fw-bold">{hall.tableCount}</span></p>
                 <p>Guest Up to: <span className="fw-bold">{hall.guestUpTo}</span></p>
-                <p>Created Date: <span className="fw-bold">{new Date(hall.createdDate).toLocaleString("en-GB")}</span></p>
+                <p>Created Date: <span className="fw-bold">{new Date(hall.createdDate).toLocaleString("vn")}</span></p>
                 <p>Is Active: <span className="fw-bold">{branch.isActive ? "Yes" : "No"}</span></p>
                     {hall.prices.length > 0 ? hall.prices.map((price) => <div className="border rounded m-2 p-2">
                         <h5>Hall Price id: {price.id}</h5>

@@ -3,10 +3,10 @@ import Apis, { SERVER, authApi, endpoints, authAxiosAPI } from "../../../configs
 import { useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
 
-const EditDish = () => {
+const EditDish = (props) => {
 
     const [params] = useSearchParams();
-    const id = params.get("id");
+    const id = props.id|| params.get("id");
     const navigate = useNavigate();
     const [error, setError] = useState();
     const [dish, setDish] = useState();
@@ -69,7 +69,7 @@ const EditDish = () => {
             <input type="file" id="file" name="file" className="form-control"/>
             <label>Current image</label>
             <img src={dish.image} alt={dish.name + ".jpg"} className="d-block"/>
-            <button className="btn btn-primary">Update</button>
+            <button className="btn btn-primary mt-2">Update</button>
             {error}
         </form>}
     </>

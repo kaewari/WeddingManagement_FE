@@ -9,7 +9,6 @@ const UpdateHallPrice = (props) => {
     const hallPrice = props.hallPrice;
     const setHallPrice = props.setHallPrice;
 
-    const addHallPrice = async () => {}
     const updateHallPrice = async (e, id) => {
         e.preventDefault();
         const form = e.currentTarget
@@ -43,11 +42,11 @@ const UpdateHallPrice = (props) => {
             })}
             </select><br></br></> :
             <p className="text-secondary">No any prices now.</p>}
-            {state.hallPriceUpdate && state.hallId == hall.id &&
+            {state.hallPriceUpdate && state.hallId === hall.id &&
                 <> <span className={state.success ? "text-success" : "text-danger"}>{state.hallPriceUpdate}</span><br></br></>}
-            {state.hallPriceDelete && state.hallId == hall.id &&
+            {state.hallPriceDelete && state.hallId === hall.id &&
                 <> <span className={state.success ? "text-success" : "text-danger"}>{state.hallPriceDelete}</span><br></br></>}
-            {hallPrice && hall.prices.filter(p => p.id == hallPrice).map((price) => {
+            {hallPrice && hall.prices.filter(p => p.id === hallPrice).map((price) => {
                 return <div className="m-2 p-2">
                     <form onSubmit={(e) => {updateHallPrice(e, price.id)}}>
                         <input hidden defaultValue={price.id} />

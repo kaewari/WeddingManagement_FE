@@ -14,7 +14,7 @@ const CreateDish = () => {
         try {
             const data = new FormData(form);
             const response = await authApi().post(endpoints['dish-create'], data)
-            if (response.status == 201) {
+            if (response.status === 201) {
                 navigate(-1);
             }
         } catch (err) {
