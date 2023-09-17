@@ -13,7 +13,9 @@ code {
 }
 
 
-
+.hand-pointing:hover {
+  cursor: pointer;
+}
 .covered-div-a-tag a {
   display: block;
     position: relative;

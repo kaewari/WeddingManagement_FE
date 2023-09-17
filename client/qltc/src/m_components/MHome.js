@@ -1,42 +1,40 @@
+import { useContext, useEffect } from "react";
+import { GrUserSettings } from "react-icons/gr";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
-import Login from "../components/Login";
+import { MyUserContext } from "../App";
 import MHeader from "./m_layouts/MHeader";
 import MNav from "./m_layouts/MNav";
-import { GrUserSettings } from "react-icons/gr";
-import { useContext, useEffect } from "react";
-import { MyUserContext } from "../App";
 import Dashboard from "./path/Dashboard";
 import Branch from "./path/branch/Branch";
+import CreateBranch from "./path/branch/CreateBranch";
+import EditBranch from "./path/branch/EditBranch";
+import ViewBranch from "./path/branch/ViewBranch";
+import CreateDish from "./path/dish/CreateDish";
 import Dish from "./path/dish/Dish";
+import EditDish from "./path/dish/EditDish";
+import ViewDish from "./path/dish/ViewDish";
 import Employee from "./path/employee/Employee";
+import CustomerFeedback from "./path/feedback/CustomerFeedback";
+import ViewCustomerFeedback from "./path/feedback/ViewCustomerFeedback";
 import Order from "./path/order/Order";
 import User from "./path/user/User";
 import Wedding from "./path/wedding/Wedding";
-import WeddingService from "./path/weddingService/WeddingService";
-import CreateDish from "./path/dish/CreateDish";
-import ViewDish from "./path/dish/ViewDish";
-import EditDish from "./path/dish/EditDish";
-import CreateBranch from "./path/branch/CreateBranch";
-import ViewBranch from "./path/branch/ViewBranch";
-import ViewWeddingService from "./path/weddingService/ViewWeddingService";
 import CreateWeddingService from "./path/weddingService/CreateWeddingService";
-import EditBranch from "./path/branch/EditBranch";
 import EditWeddingService from "./path/weddingService/EditWeddingService";
-import CustomerFeedback from "./path/feedback/CustomerFeedback";
-import ViewCustomerFeedback from "./path/feedback/ViewCustomerFeedback";
+import ViewWeddingService from "./path/weddingService/ViewWeddingService";
+import WeddingService from "./path/weddingService/WeddingService";
 
+import EmployeeCreate from "./path/employee/EmployeeCreate";
 import EmployeeDetailS from "./path/employee/EmployeeDetails";
 import EmployeeEdit from "./path/employee/EmployeeEdit";
-import EmployeeCreate from "./path/employee/EmployeeCreate";
-import UserDetails from "./path/user/UserDetails";
-import UserCreate from "./path/user/UserCreate";
-import UserEdit from "./path/user/UserEdit";
 import OrderDetails from "./path/order/OrderDetails";
 import OrderEdit from "./path/order/OrderEdit";
-import OrderCreate from "./path/order/OrderCreate";
+import UserCreate from "./path/user/UserCreate";
+import UserDetails from "./path/user/UserDetails";
+import UserEdit from "./path/user/UserEdit";
+import WeddingCreate from "./path/wedding/WeddingCreate";
 import WeddingDetails from "./path/wedding/WeddingDetails";
 import WeddingEdit from "./path/wedding/WeddingEdit";
-import WeddingCreate from "./path/wedding/WeddingCreate";
 
 const userRoutes = [
   {
@@ -102,10 +100,6 @@ const userRoutes = [
   {
     path: "/order/edit",
     element: <OrderEdit />,
-  },
-  {
-    path: "/order/create",
-    element: <OrderCreate />,
   },
   {
     path: "/wedding",

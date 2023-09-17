@@ -30,9 +30,9 @@ const Dish = () => {
       
       try {
         const request = await authApi().delete(endpoints['dish-delete'](id), {method: "DELETE", headers: {"Authorization": cookie.load("token").access_token}})
-        if (request.status == 204) {
+        if (request.status === 204) {
           setState(!state)
-        } else if (request.status == 404) {
+        } else if (request.status === 404) {
           setError("Not found that dish")
         } else {
           setError("Error when trying to delete dish.")

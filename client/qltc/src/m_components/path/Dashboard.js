@@ -1,14 +1,13 @@
-import
-    {
-        ArcElement,
-        BarElement,
-        CategoryScale,
-        Chart as ChartJS,
-        Legend,
-        LinearScale,
-        Tooltip,
-    } from "chart.js";
-import { useState } from "react";
+import {
+  ArcElement,
+  BarElement,
+  CategoryScale,
+  Chart as ChartJS,
+  Legend,
+  LinearScale,
+  Tooltip,
+} from "chart.js";
+import { useEffect, useState } from "react";
 import { Col, Form, Row } from "react-bootstrap";
 import { Bar, Doughnut } from "react-chartjs-2";
 import { authApi, endpoints } from "../../configs/Apis";
@@ -28,6 +27,17 @@ const Dashboard = () => {
   const [year, setYear] = useState(2021);
   const [fromDate, setFromDate] = useState();
   const [toDate, setToDate] = useState();
+  useEffect(() => {
+    const process = async () => {
+      let { data } = await authApi().get(endpoints["revenue-year"], {
+        params: {
+          year: year,
+        },
+      });
+      setrevenueByYear(data);
+    };
+    process();
+  });
   const getRevenueByYear = (e) => {
     e.preventDefault();
     const process = async () => {

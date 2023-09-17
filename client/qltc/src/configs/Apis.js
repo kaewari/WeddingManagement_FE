@@ -6,7 +6,7 @@ const SERVER = "http://localhost:8080";
 
 export const endpoints = {
   groups: `${SERVER_CONTEXT}/api/user-group/`,
-  dishes: `${SERVER_CONTEXT}/api/dish`,
+  dishes: `${SERVER_CONTEXT}/api/dish/`,
   "dish-details": (dishId) => `${SERVER_CONTEXT}/api/dish/${dishId}/`,
   "dish-edit": (dishId) => `${SERVER_CONTEXT}/api/dish/${dishId}/update/`,
   "dish-create": `${SERVER_CONTEXT}/api/dish`,
@@ -23,6 +23,7 @@ export const endpoints = {
   "branch-activate": (branchId) =>
     `${SERVER_CONTEXT}/api/branch/${branchId}/activate`,
   "branch-delete": (branchId) => `${SERVER_CONTEXT}/api/branch/${branchId}`,
+  halls: `${SERVER_CONTEXT}/api/hall/`,
   "hall-update": (hallId) => `${SERVER_CONTEXT}/api/hall/${hallId}`,
   "hall-create": (branchId) =>
     `${SERVER_CONTEXT}/api/branch/${branchId}/add-new-halls`,
@@ -36,11 +37,19 @@ export const endpoints = {
     `${SERVER_CONTEXT}/api/hall/delete-hall-price/${hallPriceId}`,
   "hall-price-create": (hallPriceId) =>
     `${SERVER_CONTEXT}/api/hall/${hallPriceId}/add-hall-price`,
+  "hall-price": (hallPriceId) =>
+    `${SERVER_CONTEXT}/api/hall/hall-price/${hallPriceId}/`,
   orders: `${SERVER_CONTEXT}/api/order`,
-  "order-details": (orderId) => `${SERVER_CONTEXT}/api/order/${orderId}`,
+  "order-details": (orderId) => `${SERVER_CONTEXT}/api/order/${orderId}/`,
   "order-create": `${SERVER_CONTEXT}/api/order/`,
-  "order-delete": (orderId) => `${SERVER_CONTEXT}/api/order/${orderId}`,
-  "order-update": (orderId) => `${SERVER_CONTEXT}/api/order/${orderId}`,
+  "order-delete": (orderId) => `${SERVER_CONTEXT}/api/order/${orderId}/`,
+  "order-update": (orderId) => `${SERVER_CONTEXT}/api/order/${orderId}/`,
+  "order-details-dishes": (orderId) =>
+    `${SERVER_CONTEXT}/api/order/${orderId}/add-order-dish/`,
+  "order-details-halls": (orderId) =>
+    `${SERVER_CONTEXT}/api/order/${orderId}/add-order-hall/`,
+  "order-details-services": (orderId) =>
+    `${SERVER_CONTEXT}/api/order/${orderId}/add-order-service/`,
   wedding: `${SERVER_CONTEXT}/api/wedding`,
   "wedding-details": (weddingId) =>
     `${SERVER_CONTEXT}/api/wedding/${weddingId}`,
@@ -59,6 +68,8 @@ export const endpoints = {
     `${SERVER_CONTEXT}/api/wedding/service/${serviceId}/activate`,
   "service-delete": (serviceId) =>
     `${SERVER_CONTEXT}/api/wedding/service/${serviceId}`,
+  "service-prices": (serviceId) =>
+    `${SERVER_CONTEXT}/api/wedding/service/${serviceId}/get-service-price`,
   "service-price-create": (serviceId) =>
     `${SERVER_CONTEXT}/api/wedding/service/${serviceId}/add-service-price`,
   "service-price-update": (servicePriceId) =>
@@ -97,7 +108,7 @@ export const endpoints = {
   "top-best-selling-halls": (top) => `${SERVER_CONTEXT}/api/halls/top/${top}/`,
   "top-best-selling-services": (top) =>
     `${SERVER_CONTEXT}/api/services/top/${top}`,
-
+  "branch-halls": (branchId) => `${SERVER_CONTEXT}/api/branch/${branchId}/hall`,
   branch: {
     Index: (search) => `${SERVER_CONTEXT}/api/branch`,
   },

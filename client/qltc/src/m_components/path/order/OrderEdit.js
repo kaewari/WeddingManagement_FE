@@ -82,7 +82,7 @@ const OrderEdit = () => {
                   type="number"
                   value={order.total}
                   onChange={(e) => {
-                    setOrder({ total: e.target.value });
+                    setOrder({ ...order, total: e.target.value });
                   }}
                   required={true}
                 />
@@ -94,7 +94,7 @@ const OrderEdit = () => {
                   type="number"
                   value={order.discount}
                   onChange={(e) => {
-                    setOrder({ discount: e.target.value });
+                    setOrder({ ...order, discount: e.target.value });
                   }}
                   required={true}
                 />
@@ -106,7 +106,7 @@ const OrderEdit = () => {
                   type="text"
                   value={order.receiptNo}
                   onChange={(e) => {
-                    setOrder({ receiptNo: e.target.value });
+                    setOrder({ ...order, receiptNo: e.target.value });
                   }}
                   required={true}
                 />
@@ -118,7 +118,7 @@ const OrderEdit = () => {
                   type="text"
                   value={order.paidVia}
                   onChange={(e) => {
-                    setOrder({ paidVia: e.target.value });
+                    setOrder({ ...order, paidVia: e.target.value });
                   }}
                   required={true}
                 />
@@ -130,7 +130,7 @@ const OrderEdit = () => {
                   type="text"
                   value={order.note}
                   onChange={(e) => {
-                    setOrder({ note: e.target.value });
+                    setOrder({ ...order, note: e.target.value });
                   }}
                   required={true}
                 />

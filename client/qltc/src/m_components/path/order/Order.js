@@ -70,13 +70,12 @@ const Order = () => {
     <>
       <div className="d-flex justify-content-end me-2">
         <div className="text-primary">
-          <Link to="/admin/order/create">
-            <AiFillPlusCircle /> Create a new order{" "}
+          <Link to="/admin/wedding/create">
+            <AiFillPlusCircle /> Create a new order
           </Link>
         </div>
         <div>
-          {" "}
-          From Date:{" "}
+          From Date:
           <input
             type="date"
             name="fromDate"
@@ -84,7 +83,7 @@ const Order = () => {
               setTime({ ...time, fromDate: e.target.value });
             }}
           />
-          To Date:{" "}
+          To Date:
           <input
             type="date"
             name="toDate"
@@ -113,8 +112,8 @@ const Order = () => {
             orders
               .slice(0)
               .reverse()
-              .map((order) => (
-                <tr className={!order.receiptNo ? "table-active" : ""}>
+              .map((order, key) => (
+                <tr key={key} className={!order.receiptNo ? "table-active" : ""}>
                   <th scope="row">{order.id}</th>
                   <td>{order.whatCustomer.name}</td>
                   <td>{order.total}</td>

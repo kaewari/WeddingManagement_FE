@@ -58,8 +58,8 @@ const Wedding = () => {
     <>
       <div className="d-flex justify-content-end me-2">
         <div className="text-primary">
-          <Link to="/admin/order/create">
-            <AiFillPlusCircle /> Create a new order{" "}
+          <Link to="/admin/wedding/create">
+            <AiFillPlusCircle /> Create a new order
           </Link>
         </div>
         <div>
